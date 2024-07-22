@@ -18,7 +18,7 @@ export function Section({ title, children }) {
   function handleRightArrow(e) {
     e.preventDefault();
     let x = scrollX - 150;
-    let listW = children.length * 450;
+    const listW = children.length * 450;
     if ((window.innerWidth - listW) > x) {
       x = (window.innerWidth - listW) - 15;
     }
@@ -45,5 +45,5 @@ export function Section({ title, children }) {
 
 Section.propTypes = {
   title: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired // 'node' covers anything that can be rendered: numbers, strings, elements or an array (or fragment) containing these types.
+  children: PropTypes.node.isRequired, // 'node' covers anything that can be rendered: numbers, strings, elements or an array (or fragment) containing these types.
 };

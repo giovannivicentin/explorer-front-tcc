@@ -8,52 +8,52 @@ import { MdFavoriteBorder } from 'react-icons/md';
 import { FiEdit } from 'react-icons/fi';
 
 export function Card({ data }) {
-    const imageURl = `${api.defaults.baseURL}/files/${data.image}`;
-    const { user } = useAuth();
-    const navigate = useNavigate();
+  const imageURl = `${api.defaults.baseURL}/files/${data.image}`;
+  const { user } = useAuth();
+  const navigate = useNavigate();
 
-    function handleDetails(id) {
-        navigate(`/details/${id}`);
-    }
+  function handleDetails(id) {
+    navigate(`/details/${id}`);
+  }
 
-    function handleEditPlate(id) {
-        navigate(`/edit/${id}`);
-    }
+  function handleEditPlate(id) {
+    navigate(`/edit/${id}`);
+  }
 
-    return (
-        <Container>
-            <button className='edit-plate' onClick={() => handleEditPlate(data.id)}>
-                {user.is_admin === 1 && <FiEdit />}
-            </button>
+  return (
+    <Container>
+      <button className='edit-plate' onClick={() => handleEditPlate(data.id)}>
+        {user.is_admin === 1 && <FiEdit />}
+      </button>
 
-            <img src={imageURl} alt={data.title} />
+      <img src={imageURl} alt={data.title} />
 
-            <button type='button' onClick={() => handleDetails(data.id)}>
-                <h3>{data.title} &gt;</h3>
-            </button>
-            <p>{data.description}</p>
-            <strong>R$ {data.price}</strong>
+      <button type='button' onClick={() => handleDetails(data.id)}>
+        <h3>{data.title} &gt;</h3>
+      </button>
+      <p>{data.description}</p>
+      <strong>R$ {data.price}</strong>
 
-            <div>
-                <span>-</span>
-                <span>0</span>
-                <span>+</span>
-                <Button title={"Incluir"}/>
-            </div>
-            
-            <button className='favorites'>
-                <MdFavoriteBorder/>
-            </button>
-        </Container>
-    );
+      <div>
+        <span>-</span>
+        <span>0</span>
+        <span>+</span>
+        <Button title={'Incluir'}/>
+      </div>
+
+      <button className='favorites'>
+        <MdFavoriteBorder/>
+      </button>
+    </Container>
+  );
 }
 
 Card.propTypes = {
-    data: PropTypes.shape({
-        id: PropTypes.number.isRequired,
-        image: PropTypes.string,
-        title: PropTypes.string.isRequired,
-        description: PropTypes.string,
-        price: PropTypes.number,
-    }).isRequired
+  data: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    image: PropTypes.string,
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string,
+    price: PropTypes.number,
+  }).isRequired,
 };

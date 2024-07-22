@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Container = styled.div`
     padding: 0 12.3rem;
@@ -58,7 +58,7 @@ export const Container = styled.div`
 
         svg {
             font-size: 3.2rem;
-            color: ${({theme}) => theme.COLORS.WHITE};
+            color: ${({ theme }) => theme.COLORS.WHITE};
         }
     }
 

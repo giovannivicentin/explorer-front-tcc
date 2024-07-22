@@ -38,11 +38,6 @@ export const Form = styled.form`
         text-align: center;
     }
 
-    > label {
-        font-weight: 400;
-        font-size: 1.6rem;
-    }
-
     > a {
         text-align: center;
         margin-top: 3.2rem;

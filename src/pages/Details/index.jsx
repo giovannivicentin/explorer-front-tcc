@@ -1,15 +1,15 @@
-import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
-import { Container, Content } from "./styles";
-import Pedido from "../../assets/pedido.svg";
+import { useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import { Container, Content } from './styles';
+import Pedido from '../../assets/pedido.svg';
 
-import { Footer } from "../../components/Footer";
-import { Header } from "../../components/Header";
-import { Button } from "../../components/Button";
-import { api } from "../../service/api";
+import { Footer } from '../../components/Footer';
+import { Header } from '../../components/Header';
+import { Button } from '../../components/Button';
+import { api } from '../../service/api';
 
-import { Ingredients } from "../../components/Ingredients";
-import { FiChevronLeft, FiMinus, FiPlus } from "react-icons/fi";
+import { Ingredients } from '../../components/Ingredients';
+import { FiChevronLeft, FiMinus, FiPlus } from 'react-icons/fi';
 
 export function Details() {
   const [data, setData] = useState(null);

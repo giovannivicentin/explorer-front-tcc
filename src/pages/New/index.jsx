@@ -1,72 +1,71 @@
-import { Container, Form, InputWrapper, ImgPlate, InputItem } from "./styles";
-import { IoIosArrowBack } from "react-icons/io";
-import { Footer } from "../../components/Footer";
-import { Input } from "../../components/Input";
-import { Button } from "../../components/Button";
-import { IngredientsItem } from "../../components/IngredientsItem";
-import { Textarea } from "../../components/Textarea";
-import { MdOutlineFileUpload } from "react-icons/md";
-import Logo from "../../assets/logo.svg";
-import Pedido from "../../assets/pedido.svg";
-import { useNavigate } from "react-router-dom";
-import { useState } from "react";
-import { api } from "../../service/api";
+import { Container, Form, InputWrapper, ImgPlate, InputItem } from './styles';
+import { IoIosArrowBack } from 'react-icons/io';
+import { Footer } from '../../components/Footer';
+import { Input } from '../../components/Input';
+import { Button } from '../../components/Button';
+import { IngredientsItem } from '../../components/IngredientsItem';
+import { Textarea } from '../../components/Textarea';
+import { MdOutlineFileUpload } from 'react-icons/md';
+import Logo from '../../assets/logo.svg';
+import Pedido from '../../assets/pedido.svg';
+import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import { api } from '../../service/api';
 
 export function New() {
-  const [title, setTitle] = useState("");
-  const [price, setPrice] = useState("");
-  const [description, setDescription] = useState("");
-  const [category, setCategory] = useState("");
+  const [title, setTitle] = useState('');
+  const [price, setPrice] = useState('');
+  const [description, setDescription] = useState('');
+  const [category, setCategory] = useState('');
   const [imageFile, setImageFile] = useState(null);
 
   const navigate = useNavigate();
 
-  
 
   const [ingredients, setIngredients] = useState([]);
-  const [newIngredient, setNewIngredient] = useState("");
+  const [newIngredient, setNewIngredient] = useState('');
 
   function handleAddIngredient() {
     setIngredients((prevState) => [...prevState, newIngredient]);
-    setNewIngredient("");
+    setNewIngredient('');
   }
 
   function handleRemoveIngredient(deleted) {
     setIngredients((prevState) =>
-      prevState.filter((ingredient) => ingredient !== deleted)
+      prevState.filter((ingredient) => ingredient !== deleted),
     );
-    setNewIngredient("");
+    setNewIngredient('');
   }
 
   async function handleNewPlate() {
     if (!title || !price || !description) {
-      alert("Favor preecha todos os campos!");
+      alert('Favor preecha todos os campos!');
     }
 
     if (ingredients.length < 1) {
-      alert("Adicione no minimo 1 ingredientes!");
+      alert('Adicione no minimo 1 ingredientes!');
     } else {
       const formData = new FormData();
-      formData.append("image", imageFile);
-      formData.append("title", title);
-      formData.append("description", description);
-      formData.append("category", category);
-      formData.append("price", price);
+      formData.append('image', imageFile);
+      formData.append('title', title);
+      formData.append('description', description);
+      formData.append('category', category);
+      formData.append('price', price);
 
       for (let i = 0; i < ingredients.length; i += 1) {
-        formData.append("ingredients", ingredients[i]);
+        formData.append('ingredients', ingredients[i]);
       }
 
       console.log(ingredients);
 
       await api
-        .post("/plates", formData)
-        .then(alert("Prato criado com sucesso!"))
+        .post('/plates', formData)
+        .then(alert('Prato criado com sucesso!'))
         .catch((error) => {
           if (error.response) {
             alert(error.response.data.message);
           } else {
-            alert("Erro ao criar o prato");
+            alert('Erro ao criar o prato');
           }
         });
 
@@ -115,20 +114,20 @@ export function New() {
               </ImgPlate>
             </div>
 
-            <Input 
-                label="name" 
-                title="Nome do prato" 
-                type="text" 
-                placeholder="Ex.: Salada Ceasar"
-                onChange={e => setTitle(e.target.value)}
-              />
-              <Input className="category"
-                label="category"
-                title="Categoria"
-                type="text"
-                placeholder="Pratos principais "
-                onChange={e => setCategory(e.target.value)}
-              />
+            <Input
+              label="name"
+              title="Nome do prato"
+              type="text"
+              placeholder="Ex.: Salada Ceasar"
+              onChange={(e) => setTitle(e.target.value)}
+            />
+            <Input className="category"
+              label="category"
+              title="Categoria"
+              type="text"
+              placeholder="Pratos principais "
+              onChange={(e) => setCategory(e.target.value)}
+            />
           </InputWrapper>
 
           <InputWrapper>
@@ -170,7 +169,9 @@ export function New() {
               <label htmlFor="text-area">Descrição</label>
               <Textarea
                 id="text-area"
-                placeholder="Fale brevemente sobre o prato, seus ingredientes e composição"
+                placeholder=
+                  // eslint-disable-next-line max-len
+                  "Fale brevemente sobre o prato, seus ingredientes e composição"
                 onChange={(e) => setDescription(e.target.value)}
               />
             </div>

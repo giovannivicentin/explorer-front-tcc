@@ -3,14 +3,14 @@ import { Container } from './styles';
 import { Ingredients } from '../Ingredients';
 
 export function Tag({ title, ...rest }) {
-    return (
-        <Container {...rest}>
-            <Ingredients IngredientsName={title}/>
-            {title}
-        </Container>
-    );
+  return (
+    <Container {...rest}>
+      <Ingredients IngredientsName={title}/>
+      {title}
+    </Container>
+  );
 }
 
 Tag.propTypes = {
-    title: PropTypes.string.isRequired
+  title: PropTypes.string.isRequired,
 };

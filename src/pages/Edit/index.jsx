@@ -1,24 +1,24 @@
-import { Container, Form, InputWrapper, ImgPlate, InputItem } from "./styles";
-import { IoIosArrowBack } from "react-icons/io";
-import { Footer } from "../../components/Footer";
-import { Input } from "../../components/Input";
-import { Button } from "../../components/Button";
-import { IngredientsItem } from "../../components/IngredientsItem";
-import { Textarea } from "../../components/Textarea";
-import { MdOutlineFileUpload } from "react-icons/md";
-import Logo from "../../assets/logo.svg";
-import Pedido from "../../assets/pedido.svg";
-import { useNavigate, useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
-import { api } from "../../service/api";
+import { Container, Form, InputWrapper, ImgPlate, InputItem } from './styles';
+import { IoIosArrowBack } from 'react-icons/io';
+import { Footer } from '../../components/Footer';
+import { Input } from '../../components/Input';
+import { Button } from '../../components/Button';
+import { IngredientsItem } from '../../components/IngredientsItem';
+import { Textarea } from '../../components/Textarea';
+import { MdOutlineFileUpload } from 'react-icons/md';
+import Logo from '../../assets/logo.svg';
+import Pedido from '../../assets/pedido.svg';
+import { useNavigate, useParams } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { api } from '../../service/api';
 
 export function Edit() {
-  const [title, setTitle] = useState("");
-  const [price, setPrice] = useState("");
-  const [description, setDescription] = useState("");
+  const [title, setTitle] = useState('');
+  const [price, setPrice] = useState('');
+  const [description, setDescription] = useState('');
   const [imageFile, setImageFile] = useState(null);
   const [ingredients, setIngredients] = useState([]);
-  const [newIngredient, setNewIngredient] = useState("");
+  const [newIngredient, setNewIngredient] = useState('');
 
   const navigate = useNavigate();
   const params = useParams();
@@ -31,7 +31,7 @@ export function Edit() {
       setTitle(title);
       setDescription(description);
       setPrice(price);
-      setIngredients(ingredients.map(item => item.name));
+      setIngredients(ingredients.map((item) => item.name));
     }
 
     fetchPlate();
@@ -40,44 +40,44 @@ export function Edit() {
 
   function handleAddIngredient() {
     setIngredients((prevState) => [...prevState, newIngredient]);
-    setNewIngredient("");
+    setNewIngredient('');
   }
 
   function handleRemoveIngredient(deleted) {
     setIngredients((prevState) =>
-      prevState.filter((ingredient) => ingredient !== deleted)
+      prevState.filter((ingredient) => ingredient !== deleted),
     );
-    setNewIngredient("");
+    setNewIngredient('');
   }
 
   async function handleEditPlate() {
     if (!title || !price || !description) {
-      alert("Favor preecha todos os campos!");
+      alert('Favor preecha todos os campos!');
     }
 
     if (ingredients.length < 1) {
-      alert("Adicione no mínimo 1 ingrediente!");
+      alert('Adicione no mínimo 1 ingrediente!');
     } else {
       const formData = new FormData();
-      formData.append("image", imageFile);
-      formData.append("title", title);
-      formData.append("description", description);
-      formData.append("price", price);
+      formData.append('image', imageFile);
+      formData.append('title', title);
+      formData.append('description', description);
+      formData.append('price', price);
 
       for (let i = 0; i < ingredients.length; i += 1) {
-        formData.append("ingredients", ingredients[i]);
+        formData.append('ingredients', ingredients[i]);
       }
 
       console.log(ingredients);
 
       await api
         .put(`/plates/${params.id}`, formData)
-        .then(alert("Prato editado com sucesso!"))
+        .then(alert('Prato editado com sucesso!'))
         .catch((error) => {
           if (error.response) {
             alert(error.response.data.message);
           } else {
-            alert("Erro ao criar o prato");
+            alert('Erro ao criar o prato');
           }
         });
 
@@ -86,9 +86,9 @@ export function Edit() {
   }
 
   async function handleRemovePlate() {
-    const isConfirm = confirm("Tem certeza que deseja remover?");
+    const isConfirm = confirm('Tem certeza que deseja remover?');
 
-    if(isConfirm) {
+    if (isConfirm) {
       await api.delete(`/plates/${params.id}`);
       navigate(-1);
     }
@@ -137,7 +137,7 @@ export function Edit() {
 
             <div className="flex">
               <label htmlFor="event-name">Nome</label>
-              <Input  
+              <Input
                 id="event-name"
                 type="text"
                 placeholder="Ex.: Salada Caesar"
@@ -195,12 +195,12 @@ export function Edit() {
           </InputWrapper>
 
           <div className="buttons">
-            <Button 
-            className="button-remove"
-            title="Remover prato"
-            onClick={handleRemovePlate}
+            <Button
+              className="button-remove"
+              title="Remover prato"
+              onClick={handleRemovePlate}
             />
-            
+
             <button type="button" onClick={handleEditPlate}>
               Adicionar pedido
             </button>

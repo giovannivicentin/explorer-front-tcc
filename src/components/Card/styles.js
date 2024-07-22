@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Container = styled.div`
     width: 100%;
@@ -44,7 +44,7 @@ export const Container = styled.div`
         border-bottom: 3.6rem;
 
         h3 {
-            color: ${({theme}) => theme.COLORS.WHITE};
+            color: ${({ theme }) => theme.COLORS.WHITE};
             font-weight: 700;
             font-size: 2.4rem;
             margin-bottom: 0.4rem;
@@ -58,7 +58,7 @@ export const Container = styled.div`
         font-size: 1.4rem;
         text-align: center;
         justify-content: center;
-        color: ${({theme}) => theme.COLORS.GRAY_200};
+        color: ${({ theme }) => theme.COLORS.GRAY_200};
     }
 
     > strong {
@@ -68,7 +68,7 @@ export const Container = styled.div`
 
         font-weight: 400;
         font-size: 3.2rem;
-        color: ${({theme}) => theme.COLORS.BLUE};
+        color: ${({ theme }) => theme.COLORS.BLUE};
     }
 
     > div {
@@ -89,7 +89,7 @@ export const Container = styled.div`
 
     > .favorites {
         font-size: 2rem;
-        color: ${({theme}) => theme.COLORS.WHITE};
+        color: ${({ theme }) => theme.COLORS.WHITE};
         background: transparent;
         border: none;
         position: absolute;
@@ -99,7 +99,7 @@ export const Container = styled.div`
 
     > .edit-plate {
         font-size: 2rem;
-        color: ${({theme}) => theme.COLORS.WHITE};
+        color: ${({ theme }) => theme.COLORS.WHITE};
         background: transparent;
         border: none;
         padding-right: 25rem;

@@ -11,8 +11,8 @@ export default createGlobalStyle`
         box-sizing: border-box;
     }
     body {
-        background: ${({theme}) => theme.COLORS.BACKGROUND_900};
-        color: ${({theme}) => theme.COLORS.WHITE};
+        background: ${({ theme }) => theme.COLORS.BACKGROUND_900};
+        color: ${({ theme }) => theme.COLORS.WHITE};
         -webkit-font-smoothing: antialiased;
         overflow-x: hidden;
     }

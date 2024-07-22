@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Container = styled.div`
     display: grid;
@@ -58,7 +58,7 @@ export const Form = styled.form`
         margin-top: 4rem;
 
         .button-remove {
-          background: ${({theme}) => theme.COLORS.RED};
+          background: ${({ theme }) => theme.COLORS.RED};
         }
 
         button {
@@ -120,7 +120,7 @@ export const ImgPlate = styled.div`
   > label {
         width: max-content;
         height: 4.8rem;
-        background: ${({theme}) => theme.COLORS.PINK};
+        background: ${({ theme }) => theme.COLORS.PINK};
         border-radius: 50%;
         display: flex;
         align-items: center;

@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types';
-import { FiSearch, FiLogOut } from "react-icons/fi";
-import { Container } from "./styles";
-import Logo from "../../assets/logo.svg";
-import Pedido from "../../assets/pedido.svg";
-import { ButtonText } from "../ButtonText";
-import { Input } from "../Input";
-import { Button } from "../Button";
-import { useAuth } from "../../hooks/auth";
+import { FiSearch, FiLogOut } from 'react-icons/fi';
+import { Container } from './styles';
+import Logo from '../../assets/logo.svg';
+import Pedido from '../../assets/pedido.svg';
+import { ButtonText } from '../ButtonText';
+import { Input } from '../Input';
+import { Button } from '../Button';
+import { useAuth } from '../../hooks/auth';
 import { useNavigate } from 'react-router-dom';
 
 export function Header({ setSearch }) {
@@ -14,7 +14,7 @@ export function Header({ setSearch }) {
   const navigate = useNavigate();
 
   function handleNew() {
-    navigate("/new");
+    navigate('/new');
   }
 
   return (
@@ -36,7 +36,7 @@ export function Header({ setSearch }) {
         className="input"
         icon={FiSearch}
         placeholder="Busque pelas opções de pratos"
-        onChange={e => setSearch(e.target.value)}
+        onChange={(e) => setSearch(e.target.value)}
       />
 
       <Button icon={Pedido} title="Meu pedido (0)" />
@@ -49,5 +49,5 @@ export function Header({ setSearch }) {
 }
 
 Header.propTypes = {
-  setSearch: PropTypes.func.isRequired
+  setSearch: PropTypes.func.isRequired,
 };
