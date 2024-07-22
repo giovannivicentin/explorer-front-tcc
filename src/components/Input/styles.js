@@ -8,10 +8,20 @@ export const Container = styled.div`
     background: ${({ theme }) => theme.COLORS.BACKGROUND_900};
     color: ${({ theme }) => theme.COLORS.WHITE};
     
-    border: 0.1rem solid ${({ theme }) => theme.COLORS.WHITE};
+    border: 0.1rem solid transparent;
     border-radius: 1rem;
     
     height: 5.6rem;
+
+    /* Apply border color on hover */
+    &:hover {
+        border-color: ${({ theme }) => theme.COLORS.WHITE};
+    }
+    
+    /* Focus within styling for input */
+    &:focus-within {
+        border-color: ${({ theme }) => theme.COLORS.WHITE};
+    }
     
     > input {
         height: 5.6rem;
@@ -22,6 +32,7 @@ export const Container = styled.div`
         border: none;
         font-size: 1.6rem;
     }
+    
     > svg {
         margin-left: 1.8rem;
     }

@@ -36,6 +36,7 @@ export const Form = styled.form`
     > h1 {
         margin-bottom: 3.1rem;
         text-align: center;
+        font-weight: 500;
     }
 
     > a {
