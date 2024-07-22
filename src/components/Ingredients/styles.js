@@ -14,7 +14,7 @@ export const Container = styled.div`
   }
 
   .ingredient-name {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     color: ${({ theme }) => theme.COLORS.GRAY_100};
   }
 `;

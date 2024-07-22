@@ -52,7 +52,7 @@ export function SignUp() {
         <Input
           type="text"
           id="userName"
-          placeholder="Exemplo: Maria da Silva"
+          placeholder="Fulado de Tal"
           onChange={(e) => setName(e.target.value)}
         />
 
@@ -60,7 +60,7 @@ export function SignUp() {
         <Input
           type="email"
           id="userEmail"
-          placeholder="Exemplo: exemplo@exemplo.com.br"
+          placeholder="nome@dominio.com"
           onChange={(e) => setEmail(e.target.value)}
         />
 

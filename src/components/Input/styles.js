@@ -20,7 +20,7 @@ export const Container = styled.div`
         color: ${({ theme }) => theme.COLORS.WHITE};
         background: transparent;
         border: none;
-        font-size: 1.8rem;
+        font-size: 1.6rem;
     }
     > svg {
         margin-left: 1.8rem;

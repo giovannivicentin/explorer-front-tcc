@@ -35,7 +35,7 @@ export function SingIn() {
         <Input
           type="email"
           id="userEmail"
-          placeholder="Exemplo: exemplo@exemplo.com.br"
+          placeholder="nome@dominio.com"
           onChange={(e) => setEmail(e.target.value)}/>
 
         <label htmlFor="userPassword">Senha</label>

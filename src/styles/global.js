@@ -19,6 +19,7 @@ export default createGlobalStyle`
 
     body, input, button, textarea {
         font-family: 'Poppins', sans-serif;
+        font-weight: 400;
         font-size: 1.6rem;
         outline: none;
     }

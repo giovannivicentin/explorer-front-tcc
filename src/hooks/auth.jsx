@@ -1,9 +1,10 @@
-import { createContext, useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
+import { createContext, useContext, useState, useEffect } from 'react';
+
 import { api } from '../service/api';
 
 export const AuthContext = createContext({});
 
+// eslint-disable-next-line react/prop-types
 function AuthProvider({ children }) {
   const [data, setData] = useState({});
 
@@ -18,9 +19,12 @@ function AuthProvider({ children }) {
       api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
 
       setData({ user, token });
+
+      console.log(user, token);
     } catch (error) {
       if (error.response) {
         alert(error.response.data.message);
+        console.log(error);
       } else {
         alert('Não foi possível entrar.');
       }
@@ -30,6 +34,7 @@ function AuthProvider({ children }) {
   function signOut() {
     localStorage.removeItem('@foodExplorer:token');
     localStorage.removeItem('@foodExplorer:user');
+
     setData({});
   }
 
@@ -39,6 +44,7 @@ function AuthProvider({ children }) {
 
     if (token && user) {
       api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+
       setData({
         token,
         user: JSON.parse(user),
@@ -46,19 +52,24 @@ function AuthProvider({ children }) {
     }
   }, []);
 
+
   return (
     <AuthContext.Provider value={{
       signIn,
       signOut,
       user: data.user,
     }}>
+
       {children}
+
     </AuthContext.Provider>
   );
 }
 
-AuthProvider.propTypes = {
-  children: PropTypes.node.isRequired,
-};
+function useAuth() {
+  const context = useContext(AuthContext);
 
-export { AuthProvider };
+  return context;
+}
+
+export { AuthProvider, useAuth };
