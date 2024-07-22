@@ -7,7 +7,7 @@ export function Footer() {
     <Container>
       <div>
        
-        <img src={LogoFooter} alt="Logo do Restaurtante em formato hexagonal" />
+        <img src={LogoFooter} alt="Logo do Restaurtante em formato hexagonal e azul criado pela Rocketseat" />
 
         <p>© 2022 - Todos os direitos reservados.</p>
       </div>

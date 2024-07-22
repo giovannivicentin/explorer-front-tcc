@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Container } from './styles';
 import { Button } from '../Button';
 import { api } from '../../service/api';
@@ -6,11 +7,8 @@ import { useNavigate } from 'react-router-dom';
 import { MdFavoriteBorder } from 'react-icons/md';
 import { FiEdit } from 'react-icons/fi';
 
-
 export function Card({ data }) {
-
-    const imageURl = `${api.defaults.baseURL}/files/${data.image}`
-
+    const imageURl = `${api.defaults.baseURL}/files/${data.image}`;
     const { user } = useAuth();
     const navigate = useNavigate();
 
@@ -24,11 +22,8 @@ export function Card({ data }) {
 
     return (
         <Container>
-
             <button className='edit-plate' onClick={() => handleEditPlate(data.id)}>
-                {user.is_admin === 1 && (
-                    <FiEdit/>
-                )} 
+                {user.is_admin === 1 && <FiEdit />}
             </button>
 
             <img src={imageURl} alt={data.title} />
@@ -43,14 +38,22 @@ export function Card({ data }) {
                 <span>-</span>
                 <span>0</span>
                 <span>+</span>
-
                 <Button title={"Incluir"}/>
             </div>
             
             <button className='favorites'>
                 <MdFavoriteBorder/>
             </button>
-
         </Container>
     );
 }
+
+Card.propTypes = {
+    data: PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        image: PropTypes.string,
+        title: PropTypes.string.isRequired,
+        description: PropTypes.string,
+        price: PropTypes.number,
+    }).isRequired
+};
