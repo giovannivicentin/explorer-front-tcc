@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.section`
   width: 100%;
-  margin-left: 30px;
+  margin-left: 3rem;
   display: flex;
   justify-items: center;
   flex-direction: column;
@@ -12,7 +12,7 @@ export const Container = styled.section`
   > h2 {
     font-style: normal;
     font-weight: 500;
-    font-size: 32px;
+    font-size: 3.2rem;
     line-height: 200%;
   }
 
@@ -20,6 +20,7 @@ export const Container = styled.section`
     padding-inline: 0;
   }
 `;
+
 export const Slider = styled.div`
   position: relative;
 
@@ -28,7 +29,7 @@ export const Slider = styled.div`
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    gap: 27px;
+    gap: 2.7rem;
     position: relative;
   }
 
@@ -48,8 +49,8 @@ export const Slider = styled.div`
   .btn-left {
     position: absolute;
     right: 100%;
-    width: 116px;
-    height: 448px;
+    width: 11.6rem;
+    height: 44.8rem;
     border: none;
     top: 0;
     background: linear-gradient(
@@ -63,8 +64,8 @@ export const Slider = styled.div`
   .btn-right {
     position: absolute;
     left: 100%;
-    width: 116px;
-    height: 448px;
+    width: 11.6rem;
+    height: 44.8rem;
     border: none;
     top: 0px;
     background: linear-gradient(
