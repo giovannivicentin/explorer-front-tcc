@@ -8,9 +8,7 @@ import { Edit } from "../pages/Edit";
 export function AppRoutes() {
 
     const { user } = useAuth();
-
-   
-
+    
     return(
         <Routes>
             <Route path="/" element={<Home/>}/>
