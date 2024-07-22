@@ -1,122 +1,109 @@
 import styled from "styled-components";
 
-export const Container = styled.div `
+export const Container = styled.div`
     width: 100%;
-    height: 512px;
-   
+    height: 51.2rem;
     
-
     background: rgba(0, 0, 0, 0.32);
-    border: 1px solid rgba(0, 0, 0, 0.65);
-    border-radius: 8px;
-   
-    padding-inline: 10% ;
+    border: 0.1rem solid rgba(0, 0, 0, 0.65);
+    border-radius: 0.8rem;
+
+    padding-inline: 10%;
     margin-inline: auto;
     display: flex;
     flex-direction: column;
-    margin-left: 27px;
-   
+    margin-left: 2.7rem;
+
     position: relative;
 
     > img {
-        width: 245px;
-        height: 245px;
+        width: 24.5rem;
+        height: 24.5rem;
         opacity: 89%;
         border-radius: 50%;
         transform: scale(0.9);
         transition: all ease 0.2s;
         cursor: pointer;
         align-items: center;
-        
     }
 
-    > img:hover{
+    > img:hover {
         transform: scale(1);
     }
 
     > button {
         width: 100%;
-        height: 81px;
+        height: 8.1rem;
         border: none;
         background: transparent;
         display: flex;
-        font-size: 16px;
+        font-size: 1.6rem;
         align-items: center;
         justify-content: center;
         gap: 1.4rem;
-        border-bottom: 36px;
-       
+        border-bottom: 3.6rem;
 
         h3 {
             color: ${({theme}) => theme.COLORS.WHITE};
             font-weight: 700;
-            font-size: 24px;
-            margin-bottom: 4px;
-           
+            font-size: 2.4rem;
+            margin-bottom: 0.4rem;
         } 
     }
 
     > p {
-
-            width: 220px;
-            height: 44px;
-            font-weight: 400;
-            font-size: 14px;
-            text-align: center;
-            justify-content: center;
-            color: ${({theme}) => theme.COLORS.GRAY_200};
-            
+        width: 22rem;
+        height: 4.4rem;
+        font-weight: 400;
+        font-size: 1.4rem;
+        text-align: center;
+        justify-content: center;
+        color: ${({theme}) => theme.COLORS.GRAY_200};
     }
 
     > strong {
-        width: 220px;
-        height: 51px;
-        margin-top: 16px;
+        width: 22rem;
+        height: 5.1rem;
+        margin-top: 1.6rem;
 
         font-weight: 400;
-        font-size: 32px;
+        font-size: 3.2rem;
         color: ${({theme}) => theme.COLORS.BLUE};
-       
-        
     }
 
     > div {
         display: flex;
         align-items: center;
-        gap: 4px;
-        margin-bottom: 36px;
-        
+        gap: 0.4rem;
+        margin-bottom: 3.6rem;
 
         span {
-            font-size: 20px;
+            font-size: 2rem;
         }
 
         span:nth-child(2) {
             font-weight: 700;
-            font-size: 20px;
+            font-size: 2rem;
         }
     }
 
-    >.favorites {
-        font-size: 20px;
+    > .favorites {
+        font-size: 2rem;
         color: ${({theme}) => theme.COLORS.WHITE};
         background: transparent;
         border: none;
         position: absolute;
         top: 0;
-        margin-left: 100px;
-        
+        margin-left: 10rem;
     }
 
-    >.edit-plate {
-        font-size: 20px;
+    > .edit-plate {
+        font-size: 2rem;
         color: ${({theme}) => theme.COLORS.WHITE};
         background: transparent;
         border: none;
-        padding-right: 250px;
+        padding-right: 25rem;
         position: relative;
-        top: 25px;
-       
-        
+        top: 2.5rem;
     }
 `;

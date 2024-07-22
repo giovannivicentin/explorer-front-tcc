@@ -1,32 +1,28 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-
-
-    padding: 0 123px;
+    padding: 0 12.3rem;
     width: 100%;
-    height: 104px;
+    height: 10.4rem;
     display: flex;
     align-items: center;
-    gap: 32px;
+    gap: 3.2rem;
     background: #00111A;
-    
     grid-area: header;
 
-   
-    >input{
-        width: 300px;
+    >input {
+        width: 30rem;
     }
+
     > .logo {
         display: flex;
         align-items: center;
-        gap: 15px;
+        gap: 1.5rem;
         background: #00111A;
-        
-        
+
         h1 {
-        font-size: 25px;
-        width: max-content;     
+            font-size: 2.5rem;
+            width: max-content;
         }
     }
 
@@ -36,45 +32,44 @@ export const Container = styled.div`
     }
 
     > button {
-        width: 216px;
-        white-space: nowrap;    
+        width: 21.6rem;
+        white-space: nowrap;
     }
 
     > .buttonText {
-      
-       width: 139px;
-       height: 26px;
+        width: 13.9rem;
+        height: 2.6rem;
         background: transparent;
         border: none;
         font-weight: 400;
-        font-size: 16px;
+        font-size: 1.6rem;
         color: #C4C4CC;
     }
 
     > .logout {
         background: transparent;
         border: none;
-        padding-top: 36px;
-        padding-bottom: 36px;
+        padding-top: 3.6rem;
+        padding-bottom: 3.6rem;
         display: flex;
         align-items: center;
-        width: 32px;
-        height: 32px;
+        width: 3.2rem;
+        height: 3.2rem;
 
         svg {
-            font-size: 32px;
+            font-size: 3.2rem;
             color: ${({theme}) => theme.COLORS.WHITE};
         }
     }
 
-    @media(max-width: 600px) {
+    @media (max-width: 600px) {
         width: 100%;
-        padding: 0 20px;
+        padding: 0 2rem;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: 130px;
-        
+        gap: 13rem;
+
         button {
             display: none;
         }
@@ -86,7 +81,5 @@ export const Container = styled.div`
         > .logo {
             display: none;
         }
-
-        
     }
-`;
+    `;
