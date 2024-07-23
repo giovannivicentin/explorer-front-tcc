@@ -2,6 +2,6 @@ import axios from 'axios';
 
 export const api = axios.create({
 
-  baseURL: 'http://localhost:7777',
+  baseURL: 'https://explorer-back-tcc.onrender.com',
 
 });
