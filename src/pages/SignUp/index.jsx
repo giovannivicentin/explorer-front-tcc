@@ -63,12 +63,7 @@ export function SignUp() {
           placeholder="nome@dominio.com"
           onChange={(e) => setEmail(e.target.value)}
         />
-
-        <input type="text" inputmode="numeric" pattern="[0-9]*" />
-        <input type="number" />
-        <input type="tel" pattern="[0-9]*" />
         
-
         <label htmlFor="userPassword">Senha</label>
         <Input
           type="password"
